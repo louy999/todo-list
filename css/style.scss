@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+@import "./color";
+//root and not rebite style
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+// style dark theme
+.dark {
+  color: $Light-Grayish-Blue;
+}
+.light{
+    color: $Very-Dark-Blue;
+}
+body {
+  background-color: $Very-Dark-Blue;
+}
+
+#continer {
+  //style container
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  > img {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: -555616;
+  }
+}
