@@ -1,33 +1,146 @@
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
 @import "./color";
-//root and not rebite style
+// reset all
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Josefin Sans", sans-serif;
 }
-// style dark theme
-.dark {
-  color: $Light-Grayish-Blue;
-}
-.light{
-    color: $Very-Dark-Blue;
-}
-body {
-  background-color: $Very-Dark-Blue;
-}
-
-#continer {
-  //style container
+// becouse no repeat
+.bg {
   width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2512;
+}
+img {
+  cursor: pointer;
+}
+#circle,
+#circle-todo {
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid $Very-Dark-Grayish-Blue;
+  height: 30px;
+  // background-image: $Check-Background;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
-  > img {
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    z-index: -555616;
+  align-items: center;
+}
+//////////////////////////////////////////
+body.dark {
+  background-color: $Very-Dark-Blue;
+  color: $Light-Grayish-Blue;
+  .todo-list {
+    background-color: $Very-Dark-Desaturated-Blue;
+    box-shadow: 5px 5px 5px $Very-Dark-Blue;
+    > div {
+      border-bottom: 1px solid $Very-Light-Gray;
+    }
+    .clear:hover,
+    .activity > *:hover {
+      color: $Very-Light-Gray;
+    }
+  }
+}
+body.light {
+  background-color: $Very-Light-Gray;
+  .todo-list {
+    background-color: $Very-Light-Gray;
+    box-shadow: 5px 5px 5px $Dark-Grayish-Blue;
+    > div {
+      border-bottom: 1px solid $Very-Dark-Blue;
+    }
+    .clear:hover,
+    .activity > *:hover {
+      color: $Very-Dark-Blue;
+    }
+  }
+}
+#contanier {
+  width: max(650px, 375px);
+  margin: 30px auto;
+  div.header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    h1 {
+      color: $Very-Light-Gray;
+      letter-spacing: 5px;
+      font-weight: 700;
+    }
+    img {
+      width: 35px;
+      height: 35px;
+    }
+  }
+  .write-todo {
+    width: 100%;
+    margin: 20px 0;
+    background-color: $Very-Dark-Desaturated-Blue;
+    min-height: 35px;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    flex-wrap: wrap;
+    input {
+      background-color: $Very-Dark-Desaturated-Blue;
+      outline: none;
+      border: none;
+      width: 90%;
+      padding: 5px 10px;
+      color: $Light-Grayish-Blue;
+    }
+  }
+  .todo-list {
+    width: 100%;
+    border-radius: 10px;
+    > div {
+      height: fit-content;
+      padding: 10px;
+      display: flex;
+      &:hover .cross {
+        display: block;
+      }
+      justify-content: space-between;
+    }
+    p {
+      padding: 0 50px;
+      width: max(650px, 375px);
+      &.active {
+        color: $Dark-Grayish-Blue;
+      }
+    }
+    .cross {
+      display: none;
+      width: 20px;
+      height: 20px;
+    }
+    #status {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 15px;
+      border: none;
+      color: $Dark-Grayish-Blue;
+
+      div {
+        display: inline;
+        text-transform: capitalize;
+        &.activity {
+          .active {
+            color: $Bright-Blue;
+          }
+          cursor: pointer;
+          padding: 0 5px;
+        }
+      }
+      .clear {
+        cursor: pointer;
+      }
+    }
   }
 }

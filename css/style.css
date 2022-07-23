@@ -7,33 +7,190 @@
   font-family: "Josefin Sans", sans-serif;
 }
 
-.dark {
-  color: #cacde8;
-}
-
-.light {
-  color: #161722;
-}
-
-body {
-  background-color: #161722;
-}
-
-#continer {
+.bg {
   width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2512;
+}
+
+img {
+  cursor: pointer;
+}
+
+#circle,
+#circle-todo {
+  width: 30px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #393a4c;
+  height: 30px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-#continer > img {
-  position: absolute;
-  top: 0;
-  width: 100vw;
-  z-index: -555616;
+body.dark {
+  background-color: #161722;
+  color: #cacde8;
+}
+
+body.dark .todo-list {
+  background-color: #25273c;
+  -webkit-box-shadow: 5px 5px 5px #161722;
+          box-shadow: 5px 5px 5px #161722;
+}
+
+body.dark .todo-list > div {
+  border-bottom: 1px solid #fafafa;
+}
+
+body.dark .todo-list .clear:hover,
+body.dark .todo-list .activity > *:hover {
+  color: #fafafa;
+}
+
+body.light {
+  background-color: #fafafa;
+}
+
+body.light .todo-list {
+  background-color: #fafafa;
+  -webkit-box-shadow: 5px 5px 5px #777a92;
+          box-shadow: 5px 5px 5px #777a92;
+}
+
+body.light .todo-list > div {
+  border-bottom: 1px solid #161722;
+}
+
+body.light .todo-list .clear:hover,
+body.light .todo-list .activity > *:hover {
+  color: #161722;
+}
+
+#contanier {
+  width: 650px;
+  margin: 30px auto;
+}
+
+#contanier div.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contanier div.header h1 {
+  color: #fafafa;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+#contanier div.header img {
+  width: 35px;
+  height: 35px;
+}
+
+#contanier .write-todo {
+  width: 100%;
+  margin: 20px 0;
+  background-color: #25273c;
+  min-height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px;
+  border-radius: 5px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+#contanier .write-todo input {
+  background-color: #25273c;
+  outline: none;
+  border: none;
+  width: 90%;
+  padding: 5px 10px;
+  color: #cacde8;
+}
+
+#contanier .todo-list {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#contanier .todo-list > div {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#contanier .todo-list > div:hover .cross {
+  display: block;
+}
+
+#contanier .todo-list p {
+  padding: 0 50px;
+  width: 650px;
+}
+
+#contanier .todo-list p.active {
+  color: #777a92;
+}
+
+#contanier .todo-list .cross {
+  display: none;
+  width: 20px;
+  height: 20px;
+}
+
+#contanier .todo-list #status {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 15px;
+  border: none;
+  color: #777a92;
+}
+
+#contanier .todo-list #status div {
+  display: inline;
+  text-transform: capitalize;
+}
+
+#contanier .todo-list #status div.activity {
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+#contanier .todo-list #status div.activity .active {
+  color: #3a7bfd;
+}
+
+#contanier .todo-list #status .clear {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */

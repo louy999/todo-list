@@ -15,7 +15,9 @@
     <title>Frontend Mentor | Todo app</title>
 
     <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/normalize.css" />
     <style>
       .attribution {
         font-size: 11px;
@@ -26,22 +28,30 @@
       }
     </style>
   </head>
-  <body>
-    <div id="continer" class="dark">
-      <img src="./images/bg-desktop-dark.jpg" alt="" srcset="" />
-      <div class="con-todo">
-        <div class="con-logo-theme">
-          <h1>TODO</h1>
-          <img src="./images/icon-sun.svg" alt="" />
+  <body class="dark">
+    <div id="contanier">
+      <!-- backegound page  -->
+      <img src="./images/bg-desktop-dark.jpg" class="bg" alt="" srcset="" />
+      <div class="header">
+        <h1>TODO</h1>
+        <img src="./images/icon-sun.svg" alt="" srcset="" />
+      </div>
+      <div class="write-todo">
+        <div id="circle"></div>
+        <input type="text" placeholder="Create a new todo..." />
+      </div>
+      <div class="todo-list">
+        <div id="status">
+          <div class="itims">0 items left</div>
+          <div class="activity">
+            <div id="all" class="active">all</div>
+            <div id="active">active</div>
+            <div id="compleated">compleatd</div>
+          </div>
+          <div class="clear">clear compleatd</div>
         </div>
-        <div class="con-input-text">
-          <div class="circle"></div>
-          <input type="text" placeholder="Create a new todo" />
-        </div>
-        <div class="con-list"></div>
       </div>
     </div>
-
     <div class="attribution">
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
